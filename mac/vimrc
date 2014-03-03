@@ -1,0 +1,92 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let vundle manage vundle, required
+Bundle 'gmarik/vundle'
+
+" bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails.git'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'airblade/vim-rooter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+
+set number
+syntax on
+set autoread
+set ruler
+set encoding=utf8
+set showcmd
+
+" whitespace
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·
+set backspace=indent,eol,start
+
+" searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+" status bar
+set laststatus=2
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+filetype plugin indent on
+
+" use modeline overrides
+set modeline
+set modelines=10
+
+set cursorline
+
+" no save backup by .swp
+set nowb
+set noswapfile
+set noar
+set nobackup
+set nowritebackup
+
+" toggle search highlighting
+nmap <leader>hs :set hlsearch! hlsearch?<CR>
+
+" splits
+nmap <C-w>32 :vertical resize 32<CR>
+
+" navigate buggers and tabs
+nmap <F12> :bnext<CR>
+nmap <S-F12> :bprevious<CR>
+nmap <F11> :tabn<CR>
+nmap <S-F11> :tabp<CR>
+
+map <C-t> <plug>NERDTreeTabsToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+
+nnoremap <leader><leader> <C-^>

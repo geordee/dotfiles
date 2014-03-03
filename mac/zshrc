@@ -1,0 +1,26 @@
+export PS1="%~ $ "
+
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# psql
+PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+# colors
+export EDITOR=mate
+export CLICOLOR=1
+# White Background
+# export LSCOLORS=ExFxCxDxBxegedabagacad
+# Black Background
+# export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt inc_append_history
+setopt share_history
+h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+

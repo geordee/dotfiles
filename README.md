@@ -1,2 +1,4 @@
-dotfiles
+.files
 ========
+
+My .files

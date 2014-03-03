@@ -1,0 +1,9 @@
+# Settings
+encoding         = UTF-8
+fontName         = "Menlo"
+fontSize         = 14
+showInvisibles   = false
+softWrap         = true
+softTabs         = true
+tabSize          = 2
+
