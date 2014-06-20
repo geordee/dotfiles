@@ -2,29 +2,37 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let vundle manage vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" bundles
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'airblade/vim-rooter'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'ervandew/supertab'
-Bundle 'majutsushi/tagbar'
+" plugins
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'airblade/vim-rooter'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'ervandew/supertab'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+Plugin 'sjl/gundo.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 set number
 syntax on
@@ -41,6 +49,8 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 set backspace=indent,eol,start
+set smartindent
+set autoindent
 
 " searching
 set hlsearch
@@ -59,8 +69,6 @@ set laststatus=2
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-filetype plugin indent on
-
 " use modeline overrides
 set modeline
 set modelines=10
@@ -74,6 +82,10 @@ set noar
 set nobackup
 set nowritebackup
 
+" color scheme
+set t_Co=256
+colorscheme zenburn
+
 " toggle search highlighting
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
@@ -83,10 +95,10 @@ nmap <C-w>32 :vertical resize 32<CR>
 " navigate buggers and tabs
 nmap <F12> :bnext<CR>
 nmap <S-F12> :bprevious<CR>
-nmap <F11> :tabn<CR>
-nmap <S-F11> :tabp<CR>
 
 map <C-t> <plug>NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
+
+nnoremap <F2> :GundoToggle<CR>
 
 nnoremap <leader><leader> <C-^>
