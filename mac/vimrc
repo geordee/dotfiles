@@ -82,6 +82,9 @@ set noar
 set nobackup
 set nowritebackup
 
+" turn of paste indenting
+set paste
+
 " color scheme
 set t_Co=256
 colorscheme zenburn
