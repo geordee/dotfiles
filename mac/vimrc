@@ -6,26 +6,21 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let vundle manage vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " plugins
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'airblade/vim-rooter'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ervandew/supertab'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Shougo/denite.nvim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -99,7 +94,6 @@ nmap <C-w>32 :vertical resize 32<CR>
 nmap <F12> :bnext<CR>
 nmap <S-F12> :bprevious<CR>
 
-map <C-t> <plug>NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 nnoremap <F2> :GundoToggle<CR>
